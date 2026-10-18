@@ -1,62 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Menú - UNA Libro Café">
-  <title>UNA Libro Café - Menú</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ee">
+  <title>UNA Café y Libros | Menú</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #111;
-    }
-
-    .pdf-viewer {
-      width: 100vw;
-      height: 100vh;
-      border: 0;
-      display: block;
-    }
-
-    .fallback {
-      position: fixed;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 16px;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #111;
-    }
-
-    .fallback a {
-      color: #fff;
-      background: #333;
-      padding: 12px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; }
+    body { display: flex; flex-direction: column; background: #f7f4ee; color: #252525; font-family: Arial, Helvetica, sans-serif; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 18px; background: #fff; border-bottom: 1px solid #e4dfd5; }
+    .brand { font-size: 16px; font-weight: 700; }
+    .subtitle { font-size: 12px; color: #666; margin-top: 3px; }
+    a.button { flex-shrink: 0; padding: 9px 13px; border-radius: 6px; background: #252525; color: #fff; text-decoration: none; font-size: 13px; }
+    main { flex: 1; min-height: 0; padding: 10px; }
+    iframe { display: block; width: 100%; height: 100%; border: 0; background: white; border-radius: 4px; }
+    @media (max-width: 480px) { header { padding: 10px; } .brand { font-size: 14px; } .subtitle { font-size: 11px; } a.button { padding: 8px 10px; font-size: 12px; } main { padding: 4px; } }
   </style>
 </head>
 <body>
-  <iframe
-    class="pdf-viewer"
-    src="menu.pdf#view=FitH&toolbar=0&navpanes=0&scrollbar=0"
-    title="Menú UNA Libro Café">
-  </iframe>
-
-  <noscript>
-    <div class="fallback">
-      <p>Necesitás JavaScript para visualizar el menú.</p>
-      <a href="menu.pdf">Abrir el menú en PDF</a>
-    </div>
-  </noscript>
+  <header>
+    <div><div class="brand">UNA Café y Libros</div><div class="subtitle">Menú · Cafetería y cocina</div></div>
+    <a class="button" href="menu.pdf" target="_blank" rel="noopener">Abrir / descargar PDF</a>
+  </header>
+  <main><iframe src="menu.pdf#view=FitH" title="Menú de UNA Café y Libros">Tu navegador no puede mostrar el PDF integrado. <a href="menu.pdf">Abrir menú</a>.</iframe></main>
 </body>
 </html>
